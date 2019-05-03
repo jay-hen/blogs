@@ -1,10 +1,14 @@
-{% extends base.html %}
+{% extends "base.html" %}
 
 {% block content %}
 
-web_title = "Blog Content"
-
 <h1>Here are the blogs!</h1>
-#create link of title to posting
-
+<ul>
+    {% for post in blogs %}
+        <li>{{blog.title}}
+            <br><br>
+            {{blog.body}}
+        </li>
+        {% endfor %}
+</ul>
 {% endblock %}

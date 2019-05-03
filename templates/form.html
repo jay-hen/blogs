@@ -1,16 +1,15 @@
-{% extends base.html %}
+{% extends "base.html" %}
 
 {% block content %}
-web_title = "Submit a Post"
 
     <h1>Create a New Blog Entry</h1>
     <form method='post'>
         <label>Title:
-            <input type="text" value="{{title}}" name="title">
+            <input type="text" value="" name="title">{{title}}
         </label>
         <p class="error">{{title_error}}</p>
         <label>Body:
-            <input type="text" value="{{body}}" name="body">
+            <input type="text" value="" name="body">{{body}}
         </label>
         <p class="error">{{body_error}}</p>
         <input type="submit" value="submit">

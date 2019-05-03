@@ -17,13 +17,44 @@ class Blog(db.Model):
         self.title = title
         self.body = body
 
-@app.route('/blog', methods=['post', 'get'])
+@app.route('/')
 def index():
-    return("New blog, who dis?")
+    return redirect('/blog')
 
-@app.route('/new-post', methods=['get', 'post'])
+@app.route('/blog', methods=['POST', 'GET'])
+def listings():
+
+    blogs = Blog.query.all()
+    return render_template("listings.html", web_title="Blog Listings", blogs=blogs)
+
+@app.route('/new-post', methods=['GET', 'POST'])
 def new_post():
-    return render_template("form.html")
+    title = ''
+    body = ''
+    title_error = ''
+    body_error = ''
+
+    if request.method == 'POST':
+        title = request.form['title']
+        body = request.form['body']
+
+        if not title:
+            title_error = "Be sure to enter a title!"
+
+        if not body:
+            body_error = "Type a post! That's the whole point!"
+
+        if not title_error and not body_error:
+            new_entry = Blog(title, body)
+            db.session.add(new_entry)
+            db.session.commit()
+
+            return redirect('/blog')
+        else:
+            return render_template("form.html", web_title="Create a New Post", title=title, title_error=title_error, body=body, body_error=body_error)
+
+    if request.method == 'GET':
+         return render_template("form.html", web_title="Create a New Post")
 
 if __name__ == '__main__':
     app.run()
