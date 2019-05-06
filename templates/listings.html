@@ -3,11 +3,14 @@
 {% block content %}
 
 <h1>Here are the blogs!</h1>
+<br>
 <ul>
     {% for post in blogs %}
-        <li>{{blog.title}}
-            <br><br>
-            {{blog.body}}
+        <li>
+            <h2><a href="/blog?id={{post.id}}">{{post.title}}</a></h2>
+            <br>
+            {{post.body}}
+            <br><br><br>
         </li>
         {% endfor %}
 </ul>
