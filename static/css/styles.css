@@ -1,0 +1,53 @@
+a:link {
+    color: #89DAFF;
+}
+
+a:visited {
+    color: #8F95D3;
+    text-decoration: line-through;
+}
+
+a:hover {
+    color: #DBB1BC;
+}
+
+label {
+    color: #58504A;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+h1 {
+    color: #58504A;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-weight: boldest;
+    text-align: center;
+}
+
+h2 {
+    color: #89DAFF;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-weight: bold;
+    text-align: left;
+}
+
+p {
+    color: #58504A;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    border-bottom: 6px dashed #DBB1BC;
+    background-color: #D3C4E3;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+      background-color: #FFFBED;
+  }
