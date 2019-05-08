@@ -2,7 +2,8 @@
 
 {% block content %}
 
-    <h1>Create a New Blog Entry</h1>
+    <h1><u>Create a New Blog Entry</u></h1>
+    <div class="inner">
     <form method='post'>
         <label>Title:
             <input type="text" value="" name="title">{{title}}
@@ -14,5 +15,6 @@
         <p class="error">{{body_error}}</p>
         <input type="submit" value="submit">
     </form>
+    </div>
 
 {% endblock %}

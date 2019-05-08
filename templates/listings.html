@@ -2,15 +2,17 @@
 
 {% block content %}
 
-<h1>Here yer blog.</h1>
+<h1><u>Here yer blog.</u></h1>
 <br>
-<ul>
-    {% for post in blogs %}
-        <li>
-            <h2><a href="/blog?id={{post.id}}">{{post.title}}</a></h2>
-            <p>{{post.body}}</p>
-            <br>
-        </li>
+<div class="inner">
+    <ul>
+        {% for post in blogs %}
+            <li>
+                <h2><a href="/blog?id={{post.id}}">{{post.title}}</a></h2>
+                <p>{{post.body}}</p>
+                <br>
+            </li>
         {% endfor %}
-</ul>
+    </ul>
+</div>    
 {% endblock %}
