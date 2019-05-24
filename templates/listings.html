@@ -3,16 +3,16 @@
 {% block content %}
 
 <h1><u>Here yer blog.</u></h1>
-<br>
 <div class="inner">
     <ul>
         {% for post in blogs %}
             <li>
                 <h2><a href="/blog?id={{post.id}}">{{post.title}}</a></h2>
                 <p>{{post.body}}</p>
-                <br>
+                <h6>author: <a href="/blog?owner_id={{post.owner_id}}">{{post.owner.username}}</a></h6>
             </li>
-        {% endfor %}
+            {% endfor %}
     </ul>
-</div>    
+</div>
+    
 {% endblock %}

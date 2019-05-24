@@ -2,10 +2,13 @@
 
 {% block content %}
 
+
+<h1><u>{{title}}</u></h1>
 <div class="inner">
-<h1><u>{{post.title}}</u></h1>
+<br>
+<p>{{body}}</p>
+<h6>author: <a href="/blog?owner_id={{owner_id}}">{{username}}</a></h6>
     <br>
-<p>{{post.body}}</p>
-    <br><br><br>
 </div>
+
 {% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1><u>You made these with yer own hands or hand substitutes!</u></h1>
+<div class="inner">
+    <ul>
+        {% for post in your_posts %}
+            <li>
+                <h2><a href="/blog?id={{post.id}}">{{post.title}}</a></h2>
+                <p>{{post.body}}</p>
+                <h5>author: <a href="/blog?userid={{post.owner_id}}">{{post.owner.username}}</a></h5>
+                <br>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
